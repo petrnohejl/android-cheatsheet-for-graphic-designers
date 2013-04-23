@@ -12,6 +12,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="http://developer.android.com/favicon.ico" />
 	<meta property="og:image" content="http://developer.android.com/design/media/design_elements_landing.png" />
 
+	<!-- Kahi's Universal Cascading Style Sheet -->
 	<link rel="stylesheet" href="http://ucss.kahi.cz/latest/style.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="http://ucss.kahi.cz/latest/style.print.css" type="text/css" media="print" />
 	<script src="http://ucss.kahi.cz/latest/jq.js" type="text/javascript"></script>
@@ -23,8 +24,65 @@
 	<style type="text/css" media="screen, projection">
 		abbr {border-bottom:1px dotted #666666;cursor:help;}
 		ul ul, ol ol {padding-left:2em;}
+		.noscreen {display:none !important;}
 	</style>
 
+	<!-- JS functions -->
+	<script type="text/javascript">
+		//<![CDATA[
+		function lastModifiedAgo()
+		{
+			var x = new Date (document.lastModified);
+			Modif = new Date(x.toGMTString());
+			Year = takeYear(Modif);
+			Month = Modif.getMonth();
+			Day = Modif.getDate();
+			Mod = (Date.UTC(Year,Month,Day,0,0,0))/86400000;
+			x = new Date();
+			today = new Date(x.toGMTString());
+			Year2 = takeYear(today);
+			Month2 = today.getMonth();
+			Day2 = today.getDate();
+			now = (Date.UTC(Year2,Month2,Day2,0,0,0))/86400000;
+			daysago = now - Mod;
+
+			if (daysago < 0) return '';
+			unit = 'days';
+			if (daysago > 730)
+			{
+				daysago = Math.floor(daysago/365);
+				unit = 'years';
+			}
+			else if (daysago > 60)
+			{
+				daysago = Math.floor(daysago/30);
+				unit = 'months';
+			}
+			else if (daysago > 14)
+			{
+				daysago = Math.floor(daysago/7);
+				unit = 'weeks'
+			}
+
+			var towrite = '';
+			if (daysago == 0) towrite += 'today';
+			else if (daysago == 1) towrite += 'yesterday';
+			else towrite += daysago + ' ' + unit + ' ago';
+			return towrite;
+		}
+
+
+		function takeYear(theDate)
+		{
+			x = theDate.getYear();
+			var y = x % 100;
+			y += (y < 38) ? 2000 : 1900;
+			return y;
+		}
+		//]]>
+	</script>
+
+	<!-- Google Analytics -->
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-40282536-1']);
@@ -554,12 +612,21 @@
 
 	<h2 id="written-by">Written by</h2>
 	<p>Copyright &copy; 2013 Petr Nohejl, <a href="http://petrnohejl.cz" title="Petr Nohejl">www.petrnohejl.cz</a></p>
-	<p>Found some mistake? Something is missing? Let me know or <a href="https://github.com/petrnohejl/Android-Cheatsheet-For-Graphic-Designers" title="GitHub">send pull request</a>.</p>
+	<p>Document was last modified 
+		<abbr id="last-modified" class="noprint">
+		<script type="text/javascript">
+			document.write(lastModifiedAgo());
+			var abbr = document.getElementById("last-modified");
+			abbr.setAttribute("title", document.lastModified);
+		</script></abbr><abbr class="noscreen"><script type="text/javascript">document.write(document.lastModified);</script></abbr>.
+	</p>
+	<p>Found some mistake? Something is missing? 
+		Let me know or <a href="https://github.com/petrnohejl/Android-Cheatsheet-For-Graphic-Designers" title="GitHub">send pull request</a>.
+	</p>
 	<p>Thanks to 
 		Peter Kahoun for <a href="http://kahi.cz/blog/univerzalni-obecny-stylopis-html" title="Kahi's Universal Cascading Style Sheet">KUCSS</a> 
 		and Google Android for great <a href="http://developer.android.com" title="Android Developers">documentation</a>.
-	</p>
-	<p>
+		<br />
 		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 	</p>
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
