@@ -106,6 +106,7 @@
 			<ol>
 				<li><a href="#screen-densities-and-icon-dimensions">Screen densities and icon dimensions</a></li>
 				<li><a href="#google-play-asset-dimensions">Google Play asset dimensions</a></li>
+				<li><a href="#dimension-units">Dimension units</a></li>
 				<li><a href="#size-buckets">Size buckets</a></li>
 				<li><a href="#views-dimensions-and-spacing">Views dimensions and spacing</a></li>
 				<li><a href="#action-bar-height">Action bar height</a></li>
@@ -147,7 +148,7 @@
 			<tr>
 				<th>Qualifier</th>
 				<th>DPI</th>
-				<th>Coefficient</th>
+				<th>Scaling factor</th>
 				<th>Launcher icon</th>
 				<th>Action bar, tab icon</th>
 				<th>Notification icon (API 11)</th>
@@ -266,6 +267,56 @@
 	</p>
 
 
+	<h3 id="dimension-units">Dimension units</h3>
+	<table>
+		<tbody>
+			<tr>
+				<th>Unit</th>
+				<th>Units / physical inch</th>
+				<th>Density independent</th>
+				<th>Same physical size on every screen</th>
+			</tr>
+			<tr>
+				<td><abbr title="pixel">px</abbr></td>
+				<td>varies</td>
+				<td>no</td>
+				<td>no</td>
+			</tr>
+			<tr>
+				<td><abbr title="inch">in</abbr></td>
+				<td>1</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr>
+			<tr>
+				<td><abbr title="milimeter">mm</abbr></td>
+				<td>25.4</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr>
+			<tr>
+				<td><abbr title="point">pt</abbr></td>
+				<td>72</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr>
+			<tr>
+				<td><abbr title="density-independent pixel">dp</abbr></td>
+				<td>~160</td>
+				<td>yes</td>
+				<td>no</td>
+			</tr>
+			<tr>
+				<td><abbr title="scale-independent pixel">sp</abbr></td>
+				<td>~160</td>
+				<td>yes</td>
+				<td>no</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Sources and useful links: <a href="http://blogs.captechconsulting.com/blog/steven-byle/understanding-density-independence-android">Understanding Density Independence in Android</a></p>
+
+
 	<h3 id="size-buckets">Size buckets</h3>
 	<table>
 		<tbody>
@@ -284,7 +335,7 @@
 		</tbody>
 	</table>
 	<p><img src="http://developer.android.com/design/media/metrics_diagram.png" alt="Size buckets" /></p>
-	<p>Notice: one dp (density-independent pixels) is one pixel on a 160 DPI screen.</p>
+	<p>Notice: one dp (density-independent pixel) is one pixel on a 160 DPI screen.</p>
 	<p>Sources and useful links: <a href="http://developer.android.com/design/style/metrics-grids.html">Metrics and Grids</a></p>
 
 
@@ -345,7 +396,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<p>Notice: one sp (scale-independent pixels) is one pixel on a 160 DPI screen if the user's global text scale is set to 100%.</p>
+	<p>Notice: one sp (scale-independent pixel) is one pixel on a 160 DPI screen if the user's global text scale is set to 100%.</p>
 	<p>Sources and useful links: <a href="http://developer.android.com/design/style/typography.html">Typography</a></p>
 
 
