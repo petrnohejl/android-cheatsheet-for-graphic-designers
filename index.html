@@ -336,8 +336,38 @@
 	</table>
 	<p><img src="http://developer.android.com/design/media/metrics_diagram.png" alt="Size buckets" /></p>
 	<p>Notice: one dp (density-independent pixel) is one pixel on a 160 DPI screen.</p>
-	<p>Sources and useful links: <a href="http://developer.android.com/design/style/metrics-grids.html">Metrics and Grids</a></p>
 
+    <p>A more diverse categorization is supported through qualifiers:</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Qualifier</th>
+				<th>Dimension</th>
+			</tr>
+			<tr>
+				<td><em>small</em></td>
+				<td>at least 426dp x 320dp</td>
+			</tr>
+			<tr>
+				<td><em>normal</em></td>
+				<td>at least 470dp x 320dp</td>
+			</tr>
+			<tr>
+				<td><em>large</em></td>
+				<td>at least 640dp x 480dp</td>
+			</tr>
+			<tr>
+				<td><em>xlarge</em></td>
+				<td>at least 960dp x 720dp</td>
+			</tr>
+		</tbody>
+	</table>
+	<p><img src="http://developer.android.com/images/screens_support/screens-ranges.png" alt="Screen ranges" /></p>
+	<p>Sources and useful links:
+		<a href="http://developer.android.com/design/style/metrics-grids.html">Metrics and Grids</a>,
+		<a href="http://developer.android.com/about/dashboards/index.html#Screens">Screen Sizes and Densities</a>,
+		<a href="http://developer.android.com/guide/practices/screens_support.html">Supporting Multiple Screens</a>
+	</p>
 
 	<h3 id="views-dimensions-and-spacing">Views dimensions and spacing</h3>
 	<p><b>Touchable UI components</b> are generally laid out along <b>48 dp</b> units. <b>Spacing</b> between each UI element is <b>8 dp</b>.</p>
