@@ -1,4 +1,4 @@
-Android cheatsheet for graphic designers
+Android Cheatsheet for Graphic Designers
 ========================================
 
 Graphic designers aren't programmers and sometimes don't know how to properly 
