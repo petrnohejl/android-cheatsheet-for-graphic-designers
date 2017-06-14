@@ -1,5 +1,7 @@
-Android Cheatsheet for Graphic Designers
-========================================
+Android Cheatsheet for Graphic Designers [DEPRECATED]
+=====================================================
+
+*Android Cheatsheet for Graphic Designers is deprecated. Use the [Material Design Guidelines](https://material.io/guidelines/) instead.*
 
 Graphic designers aren't programmers and sometimes don't know how to properly 
 prepare graphic assets for developers. This simple cheatsheet should help them 
@@ -13,9 +15,7 @@ Printable version by Sean Wendt: [http://i.imgur.com/JRCxW5N.jpg](http://i.imgur
 Written by
 ==========
 
-* [Petr Nohejl](http://petrnohejl.cz)
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B3JBY3NU6L2XY)
+[Petr Nohejl](http://petrnohejl.cz)
 
 
 License
